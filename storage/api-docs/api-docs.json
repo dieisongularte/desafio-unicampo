@@ -1,0 +1,130 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Desafio Unicampo",
+        "description": "API para cadastro de Pessoa e buscar endereço pelo CEP.",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/pessoa": {
+            "post": {
+                "tags": [
+                    "Pessoa"
+                ],
+                "summary": "Pessoa Register",
+                "description": "Pessoa Register here",
+                "operationId": "Pessoa",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "nome_completo",
+                                    "data_nascimento",
+                                    "tipo",
+                                    "cpf_cnpj",
+                                    "email",
+                                    "endereco",
+                                    "latitude",
+                                    "longitude"
+                                ],
+                                "properties": {
+                                    "nome_completo": {
+                                        "type": "string"
+                                    },
+                                    "data_nascimento": {
+                                        "type": "string",
+                                        "format": "date"
+                                    },
+                                    "tipo": {
+                                        "type": "string"
+                                    },
+                                    "cpf_cnpj": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "endereco": {
+                                        "type": "string"
+                                    },
+                                    "latitude": {
+                                        "type": "number"
+                                    },
+                                    "longitude": {
+                                        "type": "number"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Register Successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/api/pessoa/search_address/{cep}": {
+            "get": {
+                "tags": [
+                    "Search Address"
+                ],
+                "summary": "Get Address Details",
+                "description": "Get Address by CEP",
+                "operationId": "GetAddressDetails",
+                "parameters": [
+                    {
+                        "name": "cep",
+                        "in": "path",
+                        "description": "Informe um cep",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "87005010"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Search Successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            }
+        }
+    }
+}
