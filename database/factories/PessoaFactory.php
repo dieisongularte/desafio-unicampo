@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Utils\Constants\TipoPessoaConstant;
 
 class PessoaFactory extends Factory
 {
@@ -14,8 +15,8 @@ class PessoaFactory extends Factory
     public function definition()
     {
         $nome_completo = $this->faker->firstName() . ' ' . $this->faker->lastName();
-        $tipo = $this->faker->randomElement(['f', 'j']);
-        $cpfCnpj = ($tipo == 'f') ? $this->faker->cpf(false) : $this->faker->cnpj(false);
+        $tipo = $this->faker->randomElement([TipoPessoaConstant::FISICA, TipoPessoaConstant::JURIDICA]);
+        $cpfCnpj = ($tipo == TipoPessoaConstant::FISICA) ? $this->faker->cpf() : $this->faker->cnpj();
 
         return [
             "nome_completo" => $nome_completo,
