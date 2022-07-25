@@ -15,7 +15,7 @@ return [
 
     'array'         => ['atributo' => ':attribute', 'msg' => 'Deve ser um array;'],
     'boolean'       => ['atributo' => ':attribute', 'msg' => 'Deve ser booleano;'],
-    'date'          => ['atributo' => ':attribute', 'msg' => 'Deve ser uma data;'],
+    'date'          => ['atributo' => ':attribute', 'msg' => 'Deve ser uma data válida;'],
     'email'         => ['atributo' => ':attribute', 'msg' => 'Deve ser um endereço de email válido;'],
     'exists'        => ['atributo' => ':attribute', 'msg' => 'Não encontrado;'],
     'integer'   => ['atributo' => ':attribute', 'msg' => 'Deve ser um valor inteiro;'],

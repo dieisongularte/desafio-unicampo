@@ -49,7 +49,6 @@ class PessoaController extends Controller
     *          description="Unprocessable Entity",
     *          @OA\JsonContent()
     *       ),
-    *      @OA\Response(response=404, description="Resource Not Found"),
     * )
     */
     public function store(PessoaRequest $request)
