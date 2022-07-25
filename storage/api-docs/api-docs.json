@@ -83,7 +83,7 @@
                 }
             }
         },
-        "/api/pessoa/search_address/{cep}": {
+        "/api/search_address/{cep}": {
             "get": {
                 "tags": [
                     "Search Address"

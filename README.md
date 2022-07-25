@@ -55,7 +55,7 @@ $ php artisan serve
 $ http://localhost:8000/api/pessoa
 
 # Rota buscar um endereço pelo cep (Get)
-$ http://localhost:8000/api/pessoa/search_address/{cep}
+$ http://localhost:8000/api/search_address/{cep}
 
 # Rota para acessar documentação swagger
 $ http://localhost:8000/api/documentation
