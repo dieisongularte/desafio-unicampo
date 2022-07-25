@@ -40,6 +40,9 @@ $ DB_PASSWORD=
 
 #Gerar um cópia do arquivo .env.example renomeando para .env na raiz do projeto
 
+#Gerar a chave da aplicação
+$ php artisan key:generate
+
 #Executar as migrations com dados fake
 $ php artisan migrate --seed
 
