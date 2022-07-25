@@ -2,6 +2,10 @@
 
 return [
 
+    'key_google_api' => env('KEY_GOOGLE_API'),
+
+    'url_google_api' => env('URL_GOOGLE_API'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
