@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PessoaController;
+use App\Http\Controllers\SearchAddressController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,4 @@ Route::get('/', fn() => response()->json([
 ]));
 
 Route::post('pessoa', [PessoaController::class, 'store']);
-Route::get('pessoa/search_address/{cep}', [PessoaController::class, 'searchAddress']);
+Route::get('search_address/{cep}', [SearchAddressController::class, 'searchAddress']);
