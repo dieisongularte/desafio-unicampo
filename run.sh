@@ -13,16 +13,14 @@ if [ ! -f "$filename" ]; then
     cp "$filename.example" $filename
 fi
 
-#Cria cache de configuração
-php artisan config:cache
-
 #Gerar a chave da aplicação
 php artisan key:generate
+
+#Cria cache de configuração
+php artisan config:cache
 
 #Executar as migrations com dados fake
 php artisan migrate --seed
 
 #Subir aplicação
 php artisan serve
-
-echo "Olá, Mundo!"
