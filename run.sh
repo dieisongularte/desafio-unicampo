@@ -20,9 +20,9 @@ php artisan config:cache
 php artisan key:generate
 
 #Executar as migrations com dados fake
-$ php artisan migrate --seed
+php artisan migrate --seed
 
 #Subir aplicação
-$ php artisan serve
+php artisan serve
 
 echo "Olá, Mundo!"
