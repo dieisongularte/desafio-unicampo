@@ -16,11 +16,33 @@ fi
 #Gerar a chave da aplicação
 php artisan key:generate
 
-#Cria cache de configuração
+#Criar cache de configuração
 php artisan config:cache
 
-#Executar as migrations com dados fake
-php artisan migrate --seed
+echo "Deseja executar as migrations? (s/n)"
+read run_migrate;
 
-#Subir aplicação
-php artisan serve
+if [ $run_migrate == "s" ];
+then
+    php artisan migrate
+fi
+
+printf "\n"
+
+echo "Deseja popular o banco de dados com dados fake? (s/n)"
+read run_seed;
+
+if [ $run_seed == "s" ];
+then
+    php artisan db:seed
+fi
+
+printf "\n"
+
+echo "Deseja subir o servidor de desenvolvimento do PHP? (s/n)"
+read run_serve;
+
+if [ $run_serve == "s" ];
+then
+    php artisan serve
+fi
